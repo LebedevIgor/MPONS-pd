@@ -79,7 +79,7 @@ const InfoPage = () => {
         </Col>
         <Col xs={12} className="mt-4 text-center">
           <Button className="btn btn-light" onClick={calculateResult}>
-            Расчитать
+            Расcчитать
           </Button>
         </Col>
       </Row>

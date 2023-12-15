@@ -1,23 +1,19 @@
-import React, { Suspense, lazy } from 'react';
-
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-
-const Layout = lazy(() => import('./components/Layout/Layout'));
-const MainPage = lazy(() => import('./page/MainPage/MainPage'));
-const InfoPage = lazy(() => import('./page/InfoPage/InfoPage'));
+import Layout from './components/Layout/Layout';
+import MainPage from './page/MainPage/MainPage';
+import InfoPage from './page/InfoPage/InfoPage';
 
 const App = () => {
   return (
     <>
-      <Suspense fallback={<></>}>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/:id" element={<InfoPage />} />
-            <Route path="*" element={<MainPage />} />
-          </Route>
-        </Routes>
-      </Suspense>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<MainPage />} />
+          <Route path="/:id" element={<InfoPage />} />
+          <Route path="*" element={<MainPage />} />
+        </Route>
+      </Routes>
     </>
   );
 };
